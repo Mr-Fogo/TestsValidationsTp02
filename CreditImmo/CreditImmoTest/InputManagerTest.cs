@@ -46,7 +46,24 @@ namespace CreditImmoTest
             InputManager inputManager = new InputManager();
             Assert.False(inputManager.CheckMontant(montant));
         }
-
+        [Theory]
+        [InlineData(50)]
+        public void CheckTauxTestTrue(int taux)
+        {
+            //InputManager inputManager = new InputManager();
+            Assert.True(CheckTaux(taux));
+        }
+        public bool CheckTaux(int taux)
+        {
+            if (taux > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
     }
