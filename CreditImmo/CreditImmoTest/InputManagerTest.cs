@@ -34,8 +34,8 @@ namespace CreditImmoTest
         [InlineData(70000.89)]
         public void CheckMontantTestTrue(double montant)
         {
-           // InputManager inputManager = new InputManager();
-            Assert.True(CheckMontant(montant));
+            InputManager inputManager = new InputManager();
+            Assert.True(inputManager.CheckMontant(montant));
         }
         [Theory]
         [InlineData(40000.78)]
@@ -43,22 +43,11 @@ namespace CreditImmoTest
         [InlineData(-70000.54)]
         public void CheckMontantTestFalse(double montant)
         {
-            // InputManager inputManager = new InputManager();
-            Assert.False(CheckMontant(montant));
+            InputManager inputManager = new InputManager();
+            Assert.False(inputManager.CheckMontant(montant));
         }
 
 
-        public bool CheckMontant(double montant)
-        {
-            if (montant >= 50000)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
     }
 }

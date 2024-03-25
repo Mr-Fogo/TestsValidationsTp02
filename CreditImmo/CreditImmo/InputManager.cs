@@ -19,5 +19,16 @@ namespace CreditImmo
                 return false;
             }
         }
+        public bool CheckMontant(double montant)
+        {
+            if (montant >= 50000)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
