@@ -16,6 +16,7 @@ namespace CreditImmo
             }
             else
             {
+                Console.WriteLine("Durée Erreur");
                 return false;
             }
         }
@@ -27,6 +28,7 @@ namespace CreditImmo
             }
             else
             {
+                Console.WriteLine("Montant Erreur");
                 return false;
             }
         }
@@ -38,6 +40,7 @@ namespace CreditImmo
             }
             else
             {
+                Console.WriteLine("Taux Erreur");
                 return false;
             }
         }

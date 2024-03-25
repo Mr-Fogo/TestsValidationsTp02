@@ -4,7 +4,19 @@
     {
         static void Main(string[] args)
         {
-            
+            InputManager inputManager = new InputManager();
+            if (!inputManager.CheckArguments(args))
+            {
+                return;
+            }
+            double montant = double.Parse(args[0]);
+            int duree = int.Parse(args[1]);
+            int taux = int.Parse(args[2]);
+            if (!inputManager.CheckMontant(montant) || !inputManager.CheckDuree(duree) || !inputManager.CheckTaux(taux))
+            {
+                return;
+            }
+            Console.WriteLine("Tout est bon");
         }
     }
 }
