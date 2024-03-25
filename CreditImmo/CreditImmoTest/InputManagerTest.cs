@@ -48,14 +48,24 @@ namespace CreditImmoTest
         }
         [Theory]
         [InlineData(50)]
+        [InlineData(0)]
+        [InlineData(100)]
         public void CheckTauxTestTrue(int taux)
         {
             //InputManager inputManager = new InputManager();
             Assert.True(CheckTaux(taux));
         }
+        [Theory]
+        [InlineData(-50)]
+        [InlineData(200)]
+        public void CheckTauxTestFalse(int taux)
+        {
+            //InputManager inputManager = new InputManager();
+            Assert.False(CheckTaux(taux));
+        }
         public bool CheckTaux(int taux)
         {
-            if (taux > 0)
+            if (taux >= 0 && taux <= 100)
             {
                 return true;
             }
@@ -64,7 +74,6 @@ namespace CreditImmoTest
                 return false;
             }
         }
-
 
     }
 }
