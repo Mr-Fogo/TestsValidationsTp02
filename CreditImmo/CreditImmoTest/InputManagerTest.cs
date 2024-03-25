@@ -27,6 +27,25 @@ namespace CreditImmoTest
             InputManager inputManager = new InputManager();
             Assert.False(inputManager.CheckDuree(duree));
         }
+        [Theory]
+        [InlineData(10)]
+        public void CheckMontantTestTrue(int montant)
+        {
+           // InputManager inputManager = new InputManager();
+            Assert.True(CheckMontant(montant));
+        }
+
+        public bool CheckMontant(int montant)
+        {
+            if (montant > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
