@@ -32,7 +32,7 @@ namespace CreditImmo
                 return false;
             }
         }
-        public bool CheckTaux(int taux)
+        public bool CheckTaux(double taux)
         {
             if (taux >= 0 && taux <= 100)
             {

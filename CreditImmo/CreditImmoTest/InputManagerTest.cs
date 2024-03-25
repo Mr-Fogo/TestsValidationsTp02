@@ -50,7 +50,7 @@ namespace CreditImmoTest
         [InlineData(50)]
         [InlineData(0)]
         [InlineData(100)]
-        public void CheckTauxTestTrue(int taux)
+        public void CheckTauxTestTrue(double taux)
         {
             InputManager inputManager = new InputManager();
             Assert.True(inputManager.CheckTaux(taux));
@@ -58,7 +58,7 @@ namespace CreditImmoTest
         [Theory]
         [InlineData(-1)]
         [InlineData(101)]
-        public void CheckTauxTestFalse(int taux)
+        public void CheckTauxTestFalse(double taux)
         {
             InputManager inputManager = new InputManager();
             Assert.False(inputManager.CheckTaux(taux));
