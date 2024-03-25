@@ -41,5 +41,30 @@ namespace CreditImmo
                 return false;
             }
         }
+        public bool CheckArguments(string[] args)
+        {
+            if (args.Length != 3)
+            {
+                Console.WriteLine("Nombre Argument incorrect : CredImmo <montant> <duree> <taux>");
+                return false;
+            }
+            if (!double.TryParse(args[0], out double montant))
+            {
+                Console.WriteLine("Le montant doit être un nombre");
+                return false;
+            }
+            if (!int.TryParse(args[1], out int duree))
+            {
+                Console.WriteLine("La durée doit être un nombre entier");
+                return false;
+            }
+            if (!int.TryParse(args[2], out int taux))
+            {
+                Console.WriteLine("Le taux doit être un nombre entier");
+                return false;
+            }
+            return true;
+        }
     }
+
 }

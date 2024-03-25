@@ -63,6 +63,23 @@ namespace CreditImmoTest
             InputManager inputManager = new InputManager();
             Assert.False(inputManager.CheckTaux(taux));
         }
+        [Theory]
+        [InlineData(new object[] { new string[] { "50000", "150","50" } })]    
+        public void CheckArgumentsTestTrue(string[] args)
+        {
+            Assert.True(CheckArguments(args));
+        }
+        public bool CheckArguments(string[] args)
+        {             
+            if (args.Length != 3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
