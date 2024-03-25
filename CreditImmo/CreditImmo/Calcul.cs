@@ -8,9 +8,6 @@ namespace CreditImmo
 {
     public class Calcul
     {
-        public string returnHello(string output)
-        {
-            return output;
-        }
+        
     }
 }

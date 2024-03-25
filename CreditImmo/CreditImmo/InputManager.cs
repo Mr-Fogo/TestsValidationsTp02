@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CreditImmo
 {
-    internal class InputManager
+    public class InputManager
     {
+
     }
 }
