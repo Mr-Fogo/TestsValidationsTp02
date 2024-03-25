@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreditImmo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace CreditImmoTest
         [InlineData(300)]
         public void CheckDureeTestTrue(int duree)
         {
-            Assert.True(CheckDuree(duree));
+            InputManager inputManager = new InputManager();
+            Assert.True(inputManager.CheckDuree(duree));
         }
         [Theory]
         [InlineData(-1)]
@@ -22,19 +24,9 @@ namespace CreditImmoTest
         [InlineData(451)]
         public void CheckDureeTestFlase(int duree)
         {
-            Assert.False(CheckDuree(duree));
+            InputManager inputManager = new InputManager();
+            Assert.False(inputManager.CheckDuree(duree));
         }
 
-        public static bool CheckDuree(int duree)
-        {
-           if (duree >= 108 && duree <= 300)
-           {
-               return true;
-           }
-           else
-           {
-               return false;
-           }
-        }
     }
 }
