@@ -30,5 +30,16 @@ namespace CreditImmo
                 return false;
             }
         }
+        public bool CheckTaux(int taux)
+        {
+            if (taux >= 0 && taux <= 100)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
