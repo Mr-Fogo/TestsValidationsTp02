@@ -10,6 +10,7 @@ namespace CreditImmoTest
     {
         [Theory]
         [InlineData(1)]
+        [InlineData(108)]
         public void CheckDureeTestFalse(int duree)
         {
             Assert.False(CheckDuree(duree));
@@ -17,7 +18,7 @@ namespace CreditImmoTest
 
         public static bool CheckDuree(int duree)
         {
-           if (duree > 0)
+           if (duree >= 108)
             {
                return true;
            }
