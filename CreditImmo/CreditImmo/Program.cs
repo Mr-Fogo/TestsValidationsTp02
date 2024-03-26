@@ -18,9 +18,9 @@
             }
             Calcul calcul = new Calcul();
             double mensualite = calcul.CalculMensualite(montant, duree, taux);
-            double total = calcul.CalculTotal(mensualite, duree);
+            double total = calcul.CalculTotalAvecMensualite(mensualite, duree);
             CSVMaker csvMaker = new CSVMaker();
-            string csv =csvMaker.MakeCSV(duree, mensualite, total);
+            string csv =csvMaker.MakeCSV(duree, mensualite, total,montant);
             csvMaker.SaveCSV(csv);
         }
     }

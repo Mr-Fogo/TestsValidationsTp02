@@ -9,7 +9,6 @@ namespace CreditImmoTest
         [InlineData(50000, 108, 1, 484.3)]
         [InlineData(50000, 300, 1, 188.44)]
         [InlineData(100000,300, 10, 908.70)]
-
         public void CalculMensualiteTest(double montant, int duree, double taux, double result )
         {
             Calcul calcul = new Calcul();

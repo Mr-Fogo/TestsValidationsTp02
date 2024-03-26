@@ -8,18 +8,19 @@ namespace CreditImmo
 {
     public class CSVMaker
     {
-        public string MakeCSV(int duree, double mensualite, double total)
+        public string MakeCSV(int duree, double mensualite, double totalAvecMensualite, double total)
         {
             // Création du fichier CSV
              StringBuilder streamBuilder = new StringBuilder();
-            double capitalRestant = total;
-            double capitalRembourse = 0;
-            streamBuilder.AppendLine("Nb;Mensualite;Capital Rembourse;capital Restant");
+            double capitalRestant = totalAvecMensualite - mensualite;
+            double capitalRembourse = mensualite;
+            double credit = totalAvecMensualite-total;
+            streamBuilder.AppendLine($"N;Mensualite;Capital Rembourse;Capital Restant;Cout Credit :;{credit}");
             for (int i = 0; i < duree; i++)
             {
-                streamBuilder.AppendLine($"{i + 1};{mensualite};{capitalRembourse};{capitalRestant}");
-                capitalRembourse += mensualite;
-                capitalRestant -= mensualite;
+                streamBuilder.AppendLine($"{i + 1};{Math.Round(mensualite,2)};{Math.Round(capitalRembourse,2)};{Math.Round(capitalRestant,2)}");
+                capitalRembourse = capitalRembourse + mensualite;
+                capitalRestant = capitalRestant - mensualite;
             }
             return streamBuilder.ToString();
         }

@@ -17,11 +17,15 @@ namespace CreditImmo
             mensualite = Math.Round(mensualite, 2);
             return mensualite;
         }
-        public double CalculTotal(double mensualite, int duree)
+        public double CalculTotalAvecMensualite(double mensualite, int duree)
         {
             double total = mensualite * duree;
             return total;
         }
-
+        public double CalculTotalSansMensualite(double mensualite, int duree)
+        {
+            double total = mensualite * duree;
+            return total;
+        }
     }
 }
