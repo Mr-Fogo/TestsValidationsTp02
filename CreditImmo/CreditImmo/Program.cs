@@ -9,9 +9,9 @@
             {
                 return;
             }
-            double montant = double.Parse(args[0]);
+            double montant = double.Parse(args[0].Replace(".", ","));
             int duree = int.Parse(args[1]);
-            int taux = int.Parse(args[2]);
+            double taux = double.Parse(args[2].Replace(".", ","));
             if (!inputManager.CheckMontant(montant) || !inputManager.CheckDuree(duree) || !inputManager.CheckTaux(taux))
             {
                 return;
