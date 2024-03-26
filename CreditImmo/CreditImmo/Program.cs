@@ -16,7 +16,12 @@
             {
                 return;
             }
-            Console.WriteLine("Tout est bon");
+            Calcul calcul = new Calcul();
+            double mensualite = calcul.CalculMensualite(montant, duree, taux);
+            double total = calcul.CalculTotal(mensualite, duree);
+            CSVMaker csvMaker = new CSVMaker();
+            string csv =csvMaker.MakeCSV(duree, mensualite, total);
+            csvMaker.SaveCSV(csv);
         }
     }
 }

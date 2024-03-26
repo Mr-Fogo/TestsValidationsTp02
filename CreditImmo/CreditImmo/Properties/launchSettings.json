@@ -2,7 +2,7 @@
   "profiles": {
     "CreditImmo": {
       "commandName": "Project",
-      "commandLineArgs": "40000 150 50"
+      "commandLineArgs": "50534 150 4"
     }
   }
 }
