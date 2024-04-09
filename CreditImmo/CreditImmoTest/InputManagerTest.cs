@@ -32,7 +32,7 @@ namespace CreditImmoTest
         [InlineData(50000.78)]
         [InlineData(70000)]
         [InlineData(70000.89)]
-        public void CheckMontantTestTrue(double montant)
+        public void CheckMontantTestTrue(decimal montant)
         {
             InputManager inputManager = new InputManager();
             Assert.True(inputManager.CheckMontant(montant));
@@ -41,7 +41,7 @@ namespace CreditImmoTest
         [InlineData(40000.78)]
         [InlineData(-70000)]
         [InlineData(-70000.54)]
-        public void CheckMontantTestFalse(double montant)
+        public void CheckMontantTestFalse(decimal montant)
         {
             InputManager inputManager = new InputManager();
             Assert.False(inputManager.CheckMontant(montant));

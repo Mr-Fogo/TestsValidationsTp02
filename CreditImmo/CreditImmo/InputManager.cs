@@ -20,7 +20,7 @@ namespace CreditImmo
                 return false;
             }
         }
-        public bool CheckMontant(double montant)
+        public bool CheckMontant(decimal montant)
         {
             if (montant >= 50000)
             {

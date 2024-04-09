@@ -8,24 +8,19 @@ namespace CreditImmo
 {
     public class Calcul
     {
-        public double CalculMensualite(double montant, int duree, double taux)
+        public decimal CalculMensualite(decimal montant, int duree, double taux)
         {
-            double mensualite;
-            double numerateur = montant * (taux / 100 / 12);
+            decimal mensualite;
+            double numerateur = (double)montant * (taux / 100 / 12);
             double denominateur = 1 - (Math.Pow(1 + (taux / 100 / 12), -duree));
-            mensualite = numerateur / denominateur;
-            mensualite = Math.Round(mensualite, 2);
+            mensualite = (decimal)(numerateur / denominateur);
             return mensualite;
         }
-        public double CalculTotalAvecMensualite(double mensualite, int duree)
+        public decimal CalculTotalAvecMensualite(decimal mensualite, int duree)
         {
-            double total = mensualite * duree;
-            return total;
+            double total = ((double)(mensualite * duree));
+            return (decimal)total;
         }
-        public double CalculTotalSansMensualite(double mensualite, int duree)
-        {
-            double total = mensualite * duree;
-            return total;
-        }
+
     }
 }
